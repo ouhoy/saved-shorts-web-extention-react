@@ -74,13 +74,24 @@ a {
 }
 .shorts .short-container .short .short-links-container .short-links .options-menu {
   width: 160px;
-  height: 88px;
+  padding: 4px;
   background: white;
   position: absolute;
   top: 64px;
   border-radius: 8px;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 0 8px -2px rgba(0, 0, 0, 0.2);
+}
+.shorts .short-container .short .short-links-container .short-links .options-menu p {
+  padding: 8px;
+  color: #252525;
+  border-radius: 8px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+.shorts .short-container .short .short-links-container .short-links .options-menu p:hover {
+  background-color: #f3f4f6;
 }
 .shorts .short-container .short .short-links-container .short-links img {
   width: 24px;

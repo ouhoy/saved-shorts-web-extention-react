@@ -88,13 +88,26 @@ a {
 
           .options-menu {
             width: 160px;
-            height: 88px;
+            padding: 4px;
             background: white;
             position: absolute;
             top: 64px;
             border-radius: 8px;
             transition: all .2s ease-in-out;
             box-shadow: 0 0 8px -2px #0003;
+
+            p {
+              padding: 8px;
+              color: #252525;
+              border-radius: 8px;
+              font-weight: 400;
+              font-family: "Inter", sans-serif;
+              transition: all .2s ease-in-out;
+
+              &:hover {
+                background-color: #f3f4f6;
+              }
+            }
 
           }
 
