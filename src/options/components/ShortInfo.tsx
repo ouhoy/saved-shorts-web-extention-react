@@ -1,7 +1,8 @@
-export function ShortInfo({id, subscribed, creator, title, date}: {
+export function ShortInfo({id, subscribed,avatar, creator, title, date}: {
     id: string,
     subscribed: boolean,
     creator: string,
+    avatar: string,
     title: string,
     date: Date
 }) {
@@ -10,6 +11,17 @@ export function ShortInfo({id, subscribed, creator, title, date}: {
             <a title="Play the video in a new tab." target="_blank" href={`https://www.youtube.com/shorts/${id}`}><p
                 className="short-title">${title}</p></a>
         </div>
-        <div></div>
+        <div className={"about-creator"}>
+
+            <div className={"creator-avatar"}>
+                <img src={avatar} alt={creator}/>
+            </div>
+
+            <div className={"creator-name"}>
+                <a target="_blank" href={`https://www.youtube.com/${creator}`}>
+                        <p>${creator}</p>
+                    </a>
+            </div>
+        </div>
     </div>
 }
