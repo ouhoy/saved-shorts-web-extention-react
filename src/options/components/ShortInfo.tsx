@@ -1,6 +1,5 @@
-export function ShortInfo({id, subscribed,avatar, creator, title, date}: {
+export function ShortInfo({id,avatar, creator, title, date}: {
     id: string,
-    subscribed: boolean,
     creator: string,
     avatar: string,
     title: string,

@@ -1,5 +1,7 @@
 import "./Options.css";
 import {useState} from "react";
+import {Short} from "./components/Short";
+import {SearchBar} from "./components/SearchBar";
 
 interface ShortDetails {
     title: string,
@@ -11,32 +13,32 @@ interface ShortDetails {
 }
 
 function Options() {
-    const [counter, setCounter] = useState(0)
-    const [home, setHome] = useState("Home")
     const [shortsNumber, setShortsNumber] = useState(0)
     const [shorts, setShorts] = useState([] as ShortDetails[])
+
     chrome.storage.local.get(["savedShorts"]).then((result) => {
-        const numberOfShorts = result.savedShorts.length;
-        setShortsNumber(numberOfShorts)
-        result.savedShorts.forEach((short: ShortDetails)=>{
-            console.log(short)
-        } )
+
+        const savedShorts = result.savedShorts || [];
+        setShortsNumber(savedShorts.length);
+        setShorts(savedShorts);
     })
 
 
-    function handleClick() {
-        setCounter(c => c + 1)
-    }
-
-    function handleHome() {
-        setHome("House")
-    }
-
     return <div className="App">
-        <p>{counter}</p>
-        <p onClick={handleHome}>{home}</p>
-        <button onClick={handleClick}>Count++</button>
-        <p>Number of shorts is: {shortsNumber}</p>
+        <div className={"container"}>
+            <nav>
+                <SearchBar/>
+            </nav>
+            <p className={"saved-shorts-number"}>Number of shorts is: {shortsNumber}</p>
+            <div className={"shorts"}>
+
+                {shorts.map(short => {
+                    return <Short id={short.id} creator={short.creator} avatar={short.avatar}
+                                  title={short.title} date={short.date}/>
+                })}
+
+            </div>
+        </div>
     </div>;
 }
 
