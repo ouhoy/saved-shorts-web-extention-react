@@ -115,7 +115,7 @@ addClickEventToButtons();
 
 function onShortChange() {
 
-    if (location.href.split("/")[3] !== "shorts") return;
+    if (window.location.href.split("/")[3] !== "shorts") return;
 
     if (initialLength === 0) return onFirstLoad();
 
@@ -138,9 +138,9 @@ function onShortChange() {
 
 watchUrl(() => {
 
-    if (location.href.split("/")[3] !== "shorts") {
+    if (window.location.href.split("/")[3] !== "shorts") {
 
-        console.log(location.href)
+        console.log(window.location.href)
         initialLength = 0;
 
     } else {

@@ -2,9 +2,9 @@
 import {$} from "./helpers";
 
 export function watchUrl(onShortChange: Function) {
-    let lastUrl = location.href;
+    let lastUrl = window.location.href;
     new MutationObserver(() => {
-        const url = location.href;
+        const url = window.location.href;
         if (url !== lastUrl) {
             lastUrl = url;
             onShortChange();
