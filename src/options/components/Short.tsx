@@ -1,6 +1,8 @@
 import {ShortInfo} from "./ShortInfo";
 import {ShortOptions} from "./ShortOptions";
 
+
+
 const thumbnailUrl = `https://i.ytimg.com/vi`
 const thumbnailFormat = `frame0.jpg`
 

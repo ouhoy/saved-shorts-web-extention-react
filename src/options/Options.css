@@ -69,7 +69,6 @@ a {
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
-  opacity: 0;
   transition: all 0.2s ease-in-out;
 }
 .shorts .short-container .short .short-links-container .short-links .options-menu {
